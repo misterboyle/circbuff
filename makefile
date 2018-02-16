@@ -1,6 +1,6 @@
 MINGW_ROOT=$(MW_MINGW64_LOC)/bin
 CC=$(MINGW_ROOT)/gcc
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -std=c99
 PRODUCT=circbuff
 SRCS=main.c circbuff.c
 OBJS = main.o circbuff.o
