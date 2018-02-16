@@ -34,12 +34,13 @@ struct circbuff *circbuff(struct circbuff *in){
 void _Circbuff(struct circbuff *in){
     free(in);
 }
+
 //private method definitions
 
 static void moveTip(struct circbuff *in){
     //move the tip
-    //wrap the tip back to the start of the buffer
-    if (in->tip==&(in->buff[in->length-1]))
+    if (in->tip==&(in->buff[in->length-1])) 
+        //wrap the tip back to the start of the buffer
         in->tip = in->buff;
     else
         in->tip++;
@@ -49,9 +50,8 @@ static void moveTip(struct circbuff *in){
 }
 
 static void moveTail(struct circbuff *in){
-    //refactor out tail+tip advancement code
-    //wrap the tail back to the start of the buffer
     if (in->tail==&(in->buff[in->length-1]))
+        //wrap the tail back to the start of the buffer
         in->tail = in->buff;
     else
         in->tail++;

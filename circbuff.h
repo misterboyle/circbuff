@@ -2,8 +2,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #define DefaultBufflen 256
-#define Circbuff(...) circbuff(&(struct circbuff){.isfull=false,.length=DefaultBufflen,__VA_ARGS__})
+#define Circbuff(...) circbuff(&(struct circbuff){.length=DefaultBufflen,__VA_ARGS__})
 #define Print(arg,format) printf(#arg " = %" #format "\n",arg);
 //Class definition
 struct circbuff{
