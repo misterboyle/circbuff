@@ -25,3 +25,4 @@ struct circbuff{
 };
 //public constructor declaration
 struct circbuff *circbuff(struct circbuff*);
+void _Circbuff(struct circbuff*);

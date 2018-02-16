@@ -8,4 +8,5 @@ int main(){
         Print(mybuff->fetch(mybuff->self),f);
     mybuff->push(mybuff->self,25);
     Print(mybuff->fetch(mybuff->self),f);
+    _Circbuff(mybuff);
 }

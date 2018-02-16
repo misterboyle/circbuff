@@ -1,3 +1,4 @@
+#include <stdlib.h>
 //public method declarations
 static double fetch(struct circbuff*);
 static void push(struct circbuff*,double);

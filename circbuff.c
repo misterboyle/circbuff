@@ -23,18 +23,18 @@ static void push(struct circbuff *in,double val){
 }
 
 struct circbuff *circbuff(struct circbuff *in){
-    for (size_t i;i<Bufflen;i++){
-        in->buff[i] = 0;
-    }
-    in->tip = in->buff;
-    in->tail = in->buff;
-    in->push = push;
-    in->fetch = fetch;
-    in->self = in;
-    in->isfull = false;
-    return in;
+    struct circbuff *out = malloc(sizeof(*in));
+    *out = *in;
+    out->tip = out->tail = out->buff;
+    out->push = push;
+    out->fetch = fetch;
+    out->self = out;
+    return out;
 }
 
+void _Circbuff(struct circbuff *in){
+    free(in);
+}
 //private method definitions
 
 // static double *peekTip(struct circbuff *in){
